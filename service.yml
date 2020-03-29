@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-event-listener-service
+  labels:
+    name: spring-boot-event-listener-service
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: spring-boot-event-listener
+  type: LoadBalancer
