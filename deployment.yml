@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: spring-boot-event-listener
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: spring-boot-event-listener
+    spec:
+      containers:
+        - name: spring-boot-event-listener
+          image: 'gcr.io/gcloud-example-263116/spring-boot-event-listener:v1'
+          ports:
+            - containerPort: 8080
