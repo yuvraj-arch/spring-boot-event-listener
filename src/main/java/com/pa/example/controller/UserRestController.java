@@ -11,9 +11,17 @@ import org.springframework.context.event.SimpleApplicationEventMulticaster;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class UserRestController {
@@ -53,5 +61,17 @@ public class UserRestController {
         //eventPublisher.multicastEvent(userEvent);
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(employee);
 
+    }
+
+
+    @GetMapping("/data")
+    public ResponseEntity<String> getData() throws IOException {
+        System.out.println("Data started");
+        List<String> data = new ArrayList<>();
+        while(true){
+            File file = ResourceUtils.getFile("classpath:data/data.txt");
+            String content = new String(Files.readAllBytes(file.toPath()));
+            data.add(content);
+        }
     }
 }

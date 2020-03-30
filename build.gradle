@@ -9,6 +9,11 @@ group 'com.pa.example'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+//['-Xdebug','-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005']   - to debug the code
+bootRun {
+    jvmArgs = ['-XX:MaxMetaspaceSize=128m','-XX:+HeapDumpOnOutOfMemoryError','-XX:HeapDumpPath=/tmp/dump.hprof','-Dfile.encoding=UTF-8']
+}
+
 
 repositories {
     mavenCentral()
