@@ -69,7 +69,7 @@ public class UserRestController {
         System.out.println("Data started");
         List<String> data = new ArrayList<>();
         while(true){
-            File file = ResourceUtils.getFile("classpath:data/data.txt");
+            File file = ResourceUtils.getFile("classpath:data/sample_data.txt");
             String content = new String(Files.readAllBytes(file.toPath()));
             data.add(content);
         }
