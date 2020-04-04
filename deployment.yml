@@ -12,6 +12,7 @@ spec:
       containers:
         - name: spring-boot-event-listener
           image: 'gcr.io/gcloud-example-263116/spring-boot-event-listener:v3'
+          command: ["sh","-c"]
           ports:
             - containerPort: 8080
           resources:
@@ -20,7 +21,7 @@ spec:
               memory: "64Mi"
             limits:
               cpu: '100m'
-              memory: "128Mi"
+              memory: "512Mi"
           volumeMounts:
             - name: heap-dumps
               mountPath: /tmp
