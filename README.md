@@ -40,40 +40,7 @@ $ gradle jibDockerBuild
 
 Table of Contents
 =================
-
-   * [Kubernetes Spring Boot Example in Google Kubernetes Engine (GKE)](#kubernetes-spring-boot-example-in-google-kubernetes-engine-gke)
-   * [Table of Contents](#table-of-contents)
-      * [Create Spring Boot app](#create-spring-boot-app)
-      * [Create Docker image](#create-docker-image)
-      * [Run the Docker image](#run-the-docker-image)
-      * [Login to the K8s Cluster](#login-to-the-k8s-cluster)
-      * [Kubernetes Commands](#kubernetes-commands)
-         * [List Pods](#list-pods)
-         * [List Deployments](#list-deployments)
-         * [List Services](#list-services)
-         * [Deploy an image](#deploy-an-image)
-         * [Expose Load Balancer](#expose-load-balancer)
-         * [Scale deployments](#scale-deployments)
-      * [K8s YAML Creator](#k8s-yaml-creator)
-         * [Deployment YML used](#deployment-yml-used)
-         * [Service YML used](#service-yml-used)
-         * [Commands to Create/Update](#commands-to-createupdate)
-         * [Command to retrieve logs](#command-to-retrieve-logs)
-      * [Deployment Strategies](#deployment-strategies)
-         * [Recreate Strategy](#recreate-strategy)
-         * [Rolling Update Strategy](#rolling-update-strategy)
-         * [Blue Green Deployment](#blue-green-deployment)
-            * [Commands](#commands)
-      * [Canary Deployments](#canary-deployments)
-         * [Type 1](#type-1)
-            * [Commands](#commands-1)
-         * [Type 2](#type-2)
-            * [Commands](#commands-2)
          
-## Create Spring Boot app
-You can use the sample project which I have in here.
-
-`git clone https://github.com/TechPrimers/spring-boot-lazy-init-example.git`
 
 ## Create Docker image
 Command to create docker image using Google JIB plugin

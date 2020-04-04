@@ -14,11 +14,12 @@ bootRun {
     jvmArgs = ['-XX:MaxMetaspaceSize=128m','-XX:+HeapDumpOnOutOfMemoryError','-XX:HeapDumpPath=/tmp/dump.hprof','-Dfile.encoding=UTF-8']
 }
 
-
 repositories {
     mavenCentral()
 }
-jib.to.image = 'gcr.io/gcloud-example-263116/spring-boot-event-listener:v1'
+jib.to.image = 'gcr.io/gcloud-example-263116/spring-boot-event-listener:v3'
+jib.container.jvmFlags = ['-XX:MaxMetaspaceSize=128m','-XX:+HeapDumpOnOutOfMemoryError','-XX:HeapDumpPath=/tmp/dump.hprof','-Dfile.encoding=UTF-8']
+
 
 dependencies {
     // tag::actuator[]
